@@ -3,6 +3,7 @@ import inquirer from 'inquirer';
 import colors from 'colors';
 import fs from 'fs';
 import { type } from 'os';
+import {renderLicenseBadge, renderLicenseLink, renderLicenseSection } from './utils/generateMarkdown.js'
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -40,7 +41,7 @@ const questions = [
     type: 'list',
     message:'What type of license does your application use?',
     name: 'license',
-    choices: ['MIT', 'Apache 2.0', 'None/Other'],
+    choices: ['MIT', 'Apache', 'None/Other'],
 },
 {
     type:'input',
@@ -72,6 +73,16 @@ function init() {
         const readmeContent = `
 # ${answers.title}
 
+${renderLicenseBadge(answers.license)}
+
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Tests](#tests)
+- [Questions](#questions)
+
 ## Description
 ${answers.description}
 
@@ -86,6 +97,8 @@ ${answers.contribution}
 
 ## Tests
 ${answers.test}
+
+${renderLicenseSection(answers.license)}
 
 ## Questions
 If you have any questions, please reach out via email: ${answers.questions} or check out my Github at https://github.com/${answers.github}`;
