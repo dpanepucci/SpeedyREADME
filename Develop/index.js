@@ -57,8 +57,8 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(Demo_README, data) {
-    fs.writeFile(Demo_README, data, (err) => {
+function writeToFile(README, data) {
+    fs.writeFile(README, data, (err) => {
         if (err) {
             console.error('Error writing to file', err);
         } else {
@@ -102,7 +102,7 @@ ${renderLicenseSection(answers.license)}
 
 ## Questions
 If you have any questions, please reach out via email: ${answers.questions} or check out my Github at https://github.com/${answers.github}`;
-        writeToFile('Demo_README.md', readmeContent);
+        writeToFile('README.md', readmeContent);
     });
 }
 

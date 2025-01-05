@@ -1,7 +1,9 @@
 # Speedy README
 
-# Walk-through video link
+## Walk-through video link
+https://drive.google.com/file/d/1WnOp033bkGSqGoyG3dIyeM5nKsblE4Ox/view
 
+![Screenshot](./Develop/Screenshot%202025-01-05%20at%201.31.52 PM.png)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
